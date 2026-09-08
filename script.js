@@ -1,40 +1,47 @@
 const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
 
-addTaskButton.addEventListener("click", function(){
+addTaskButton.addEventListener("click", function() {
     const task = document.getElementById("taskInput").value;
     const deadline = document.getElementById("deadlineInput").value;
     const priority = document.getElementById("priorityInput").value;
     const duration = document.getElementById("durationInput").value;
+
+    if (task === "" || deadline === "" || duration === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
     const taskItem = document.createElement("div");
+    taskItem.classList.add("task-item");
+
     taskItem.innerHTML = `
-    <h3>${task}</h3>
-    <p>Deadline: ${deadline}</p>
-    <p>Priority: ${priority}</p>
-    <p>Estimated time: ${duration} hours</p>
-`;
-    
-const deleteButton = document.createElement("button");
-deleteButton.textContent = "Delete";
+        <h3>${task}</h3>
+        <p>Deadline: ${deadline}</p>
+        <p>Priority: ${priority}</p>
+        <p>Estimated time: ${duration} hours</p>
+    `;
 
-taskItem.appendChild(deleteButton);
+    const completeButton = document.createElement("button");
+    completeButton.textContent = "Complete";
+    taskItem.appendChild(completeButton);
 
-deleteButton.addEventListener("click", function(){
-    taskItem.remove();
+    completeButton.addEventListener("click", function() {
+    taskItem.classList.toggle("completed");
 });
 
-taskList.appendChild(taskItem);
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    taskItem.appendChild(deleteButton);
 
-    console.log(task);
-    console.log(deadline);
-    console.log(priority);
-    console.log(duration);
+    deleteButton.addEventListener("click", function() {
+        taskItem.remove();
+    });
 
-taskList.appendChild(taskItem);
+    taskList.appendChild(taskItem);
+
     document.getElementById("taskInput").value = "";
     document.getElementById("deadlineInput").value = "";
     document.getElementById("priorityInput").value = "medium";
     document.getElementById("durationInput").value = "";
-
 });
-

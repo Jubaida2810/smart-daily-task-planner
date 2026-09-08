@@ -1,0 +1,96 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f9fce8;
+    margin: 0;
+    padding: 40px;
+}
+
+.planner-container{
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 650px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+#addTaskButton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #222222;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#addTaskButton:hover {
+    opacity: 0.85;
+}
+
+.task-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #eeeeee;
+}
+
+#taskList {
+    max-width: 650px;
+}
+
+.task-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.task-item p {
+    margin: 6px 0;
+    color: #555555;
+}
+
+.task-item button {
+    margin-top: 12px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+.task-item button:hover {
+    background-color: #e5e5e5;
+}
+
+.task-item.completed {
+    opacity: 0.6;
+}
+
+.task-item.completed h3 {
+    text-decoration: line-through;
+}
