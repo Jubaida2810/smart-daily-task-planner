@@ -14,6 +14,15 @@ addTaskButton.addEventListener("click", function(){
     <p>Estimated time: ${duration} hours</p>
 `;
     
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+
+taskItem.appendChild(deleteButton);
+
+deleteButton.addEventListener("click", function(){
+    taskItem.remove();
+});
+
 taskList.appendChild(taskItem);
 
     console.log(task);
@@ -23,9 +32,9 @@ taskList.appendChild(taskItem);
 
 taskList.appendChild(taskItem);
     document.getElementById("taskInput").value = "";
-document.getElementById("deadlineInput").value = "";
-document.getElementById("priorityInput").value = "medium";
-document.getElementById("durationInput").value = "";
+    document.getElementById("deadlineInput").value = "";
+    document.getElementById("priorityInput").value = "medium";
+    document.getElementById("durationInput").value = "";
 
 });
 
